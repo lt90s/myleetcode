@@ -25,7 +25,7 @@ func dfs(idx int, s string, current []string, rv *[][]string) {
 	}
 
 	for i := idx; i < len(s); i++ {
-		if !valid(s[idx:i+1]) {
+		if !valid(s[idx : i+1]) {
 			continue
 		}
 		dfs(i+1, s, append(current, s[idx:i+1]), rv)
@@ -33,7 +33,7 @@ func dfs(idx int, s string, current []string, rv *[][]string) {
 }
 
 func valid(s string) bool {
-	i, j := 0, len(s) - 1
+	i, j := 0, len(s)-1
 	for i < j {
 		if s[i] != s[j] {
 			return false
